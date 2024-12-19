@@ -2,6 +2,9 @@
 services:
   db:
     image: mariadb:10.11
+    mem_limit: ${MEM_LIMIT}
+    memswap_limit: ${MEM_LIMIT}
+    cpus: ${CPU_LIMIT}
     command: --max-allowed-packet=64MB
     restart: unless-stopped
     volumes:
@@ -17,6 +20,9 @@ services:
 
   app:
     image: matomo:fpm-alpine
+    mem_limit: ${MEM_LIMIT}
+    memswap_limit: ${MEM_LIMIT}
+    cpus: ${CPU_LIMIT}
     restart: unless-stopped
     links:
       - db
@@ -35,6 +41,9 @@ services:
 
   web:
     image: nginx:alpine
+    mem_limit: ${MEM_LIMIT}
+    memswap_limit: ${MEM_LIMIT}
+    cpus: ${CPU_LIMIT}
     restart: unless-stopped
     volumes:
       - ./www:/var/www/html:z,ro
