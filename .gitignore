@@ -1,0 +1,8 @@
+.env
+www/
+*.sql
+volumes/
+configs/
+tmp/
+
+
