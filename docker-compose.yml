@@ -52,6 +52,7 @@ services:
     volumes:
       - ./volumes/matomo-app/www:/var/www/html:z,ro
       - ./configs/matomo-app/config:/var/www/html/config:z,ro
+      - ./configs/matomo-app/plugins:/var/www/html/plugins:z,ro
       # see https://github.com/matomo-org/matomo-nginx
       - ./configs/matomo-web/config/matomo.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
