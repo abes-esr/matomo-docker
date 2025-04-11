@@ -1,0 +1,3 @@
+MAILTO="pouilloux@abes.fr"
+5 * * * * www-data /usr/local/bin/php /var/www/html/console core:archive --url=http://matomo.abes.fr/ > /var/log/matomo-archive.log
+* * * * * /usr/bin/echo "$(date) - Date du CRON JOB" >> /var/log/cron.log
