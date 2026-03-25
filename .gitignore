@@ -1,8 +1,8 @@
 .env
+.idea/
 www/
 *.sql
 volumes/
 configs/
 tmp/
-
 
